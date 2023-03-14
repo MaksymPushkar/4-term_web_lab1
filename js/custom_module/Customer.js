@@ -10,37 +10,37 @@ class Customer {
 
 global_customers_list = new Array();
 
-export function find_Customer(name, age) {
+exports.find_Customer = (name, age) => {
 	for (let customer of global_customers_list) {
 		if (customer.name === name &&
 				customer.age === age) { return customer; }
 	}
 
 	return -1;
-}
+};
 
-export function add_Customer(name, age) {
-	let customer = Customer(name, age);
+exports.add_Customer = (name, age) => {
+	let customer = new Customer(name, age);
 	global_customers_list.push(customer);
 
 	return customer;
-}
+};
 
-function remove_Hospital(name, age) {
+exports.remove_Customer = (name, age) => {
 
 	for (let i = 0; i < global_customers_list.length; i++) {
-			let customer = global_customers_list[i];
-			if (customer.name === name &&
+		let customer = global_customers_list[i];
+		if (customer.name === name &&
 					customer.age === age) { global_customers_list.splice(i, 1);
 																	return 1; }
 	}
 
 	return -1;
 
-}
+};
 
-export function edit_Customer(name, age, new_name, new_age) {
-	for (let i = 0; i < array.length; i++) {
+exports.edit_Customer = (name, age, new_name, new_age) => {
+	for (let i = 0; i < global_customers_list.length; i++) {
 		let customer = global_customers_list[i];
 		if (customer.name === name &&
 				customer.age === age) { global_customers_list[i].name = new_name;
@@ -49,9 +49,9 @@ export function edit_Customer(name, age, new_name, new_age) {
 	}
 
 	return -1;
-}
+};
 
-export function get_Hospitals_List() {
+exports.get_Customers_List = () => {
 
 	console.log("\n" + "Список усіх замовників:");
 
@@ -64,4 +64,4 @@ export function get_Hospitals_List() {
 	
 	return global_customers_list;
 
-}
+};
