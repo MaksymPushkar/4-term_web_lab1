@@ -2,7 +2,7 @@
 
 let str = "I am ukrainian";
 
-export default function split(str) {
+function split(str) {
 	let tempArr = [];
 	let tempStr = "";
 

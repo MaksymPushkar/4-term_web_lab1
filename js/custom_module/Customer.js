@@ -59,8 +59,6 @@ exports.get_Customers_List = () => {
 		let customer = global_customers_list[i];
 		console.log(`Ім'я замовника: ${customer.name}, вік замовника: ${customer.age}`);
 	}
-
-	console.log();
 	
 	return global_customers_list;
 
